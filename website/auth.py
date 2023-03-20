@@ -63,3 +63,9 @@ def Sign_up():
             # add the user to the database
             pass
     return render_template("Sign_up.html", user=current_user)
+
+
+
+    
+
+

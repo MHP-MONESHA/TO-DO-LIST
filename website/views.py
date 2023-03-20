@@ -2,9 +2,9 @@
 # Standard routes for the app , where users can actually go to
 
 # url deifned here , seperate app from blueprint
-from flask import Blueprint, render_template , flash , request , jsonify
+from flask import Blueprint, render_template , flash , request , jsonify ,  redirect, url_for
 from flask_login import  login_required, current_user
-from .models import Note
+from .models import Note , Todo
 from . import db
 import json
 
@@ -44,5 +44,35 @@ def delete_note():
        
        
     return jsonify({})
-    
 
+
+@views.route("/todolist")
+@login_required
+def todolist():
+    todo_list = Todo.query.all()
+    return render_template("todolist.html", todo_list=todo_list, user=current_user)
+
+
+@views.route("/add", methods=["POST"])
+def add():
+    title = request.form.get("title")
+    new_todo = Todo(title=title, complete=False)
+    db.session.add(new_todo)
+    db.session.commit()
+    return redirect(url_for("views.todolist"))
+
+
+@views.route("/update/<int:todo_id>")
+def update(todo_id):
+    todo = Todo.query.filter_by(id=todo_id).first()
+    todo.complete = not todo.complete
+    db.session.commit()
+    return redirect(url_for("views.todolist"))
+
+
+@views.route("/delete/<int:todo_id>")
+def delete(todo_id):
+    todo = Todo.query.filter_by(id=todo_id).first()
+    db.session.delete(todo)
+    db.session.commit()
+    return redirect(url_for("views.todolist"))

@@ -21,6 +21,7 @@ def create_app():
 
     from .models import User
     from .models import Note
+   
 
     create_database(app)
 

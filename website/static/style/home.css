@@ -1,0 +1,146 @@
+body {
+  background-color: yellow;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 20px;
+  background-color: transparent;
+  position: relative;
+}
+
+#content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  min-height: calc(100vh - 200px);
+}
+
+#content img {
+  width: 50%;
+  height: auto;
+}
+
+#content-text {
+  width: 40%;
+  color: black;
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 30px;
+  padding: 0px;
+}
+
+#footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+}
+
+#footer p {
+  margin: 0;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+.footer-section i {
+  color: yellow;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+}
+
+p {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 30px;
+}
+
+
+/* Set the background color of the navigation bar */
+.navbar {
+  background-color: rgb(15, 15, 14);
+  height: 100px;
+}
+
+/* Set the color of the links in the navigation bar */
+.navbar-nav .nav-link {
+  color: white;
+  
+}
+
+
+/* Set the font size of the links in the navigation bar */
+.navbar-nav .nav-link {
+  font-size: 25px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  
+}
+
+/* Set the logo on the left */
+.navbar-brand img {
+  height: 60px;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+/* Align the links to the right */
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-nav .nav-link#logout {
+  background-color: yellow;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: black;
+}
+
+.navbar-nav .nav-link#signUp {
+  background-color: yellow;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: black;
+
+}
+
+.nav-item{
+  margin: 10px
+}
+
+button {
+  border-radius: 15px;
+  border: none;
+  padding: 10px 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+}

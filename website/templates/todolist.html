@@ -11,7 +11,7 @@
 integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/custom.css') }}">
 
 
 <main role="main" class="container extra-bottom">
@@ -77,7 +77,37 @@ integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolfl
     </table>
   </div>
 </div>
+</br><br>
+<h1 align="center">Extra Notes</h1>
+  <ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group-item">
+      {{ note.data }}
+      <button type="button" class="close delete-note-btn" data-note-id="{{ note.id }}">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <script>
+        const deleteNoteButtons = document.querySelectorAll('.delete-note-btn');
+        deleteNoteButtons.forEach(button => {
 
+          button.addEventListener('click', () => {
+
+            const noteId = button.getAttribute('data-note-id');
+            deleteNote(noteId);
+        });
+      });
+
+      </script>
+    </li>
+    {% endfor %}
+  </ul>
+  <form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </form>
 {% endblock %}
 
 

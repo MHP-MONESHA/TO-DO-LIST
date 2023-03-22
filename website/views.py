@@ -17,17 +17,6 @@ views = Blueprint('views', __name__)
 @views.route('/', methods = ['GET', 'POST'])
 @login_required
 def home():
-    if request.method == 'POST':
-        note = request.form.get('note')
-
-        if len(note) < 1:
-            flash('Please enter a note!', category='error')
-            
-        else:
-            new_note = Note(data=note, user_id=current_user.id)
-            db.session.add(new_note)
-            db.session.commit()
-            flash('Your note has been saved!', category='success')
     return render_template("home.html", user=current_user)
 
 
@@ -42,16 +31,26 @@ def delete_note():
             db.session.commit()
             flash('Your note has been deleted!', category='success')
         else:
-            flash('You do not have permission to delete this note!', category='error')
-       
-       
+            flash('You do not have permission to delete this note!', category='error')      
     return jsonify({})
 
 
-@views.route("/todolist")
+@views.route("/todolist", methods=['GET', 'POST'])
 @login_required
 def todolist():
     todo_list = Todo.query.all()
+    if request.method == 'POST':
+        note = request.form.get('note')
+
+        if len(note) < 1:
+            flash('Please enter a note!', category='error')
+            
+        else:
+            new_note = Note(data=note, user_id=current_user.id)
+            db.session.add(new_note)
+            db.session.commit()
+            flash('Your note has been saved!', category='success')
+    
     return render_template("todolist.html", todo_list=todo_list, user=current_user)
 
 

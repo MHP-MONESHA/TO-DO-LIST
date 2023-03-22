@@ -21,3 +21,4 @@ class Todo(db.Model):
     complete = db.Column(db.Boolean)
     date_created = db.Column(db.DateTime, default=datetime.datetime.utcnow())
     due_date = db.Column(db.DateTime)
+    

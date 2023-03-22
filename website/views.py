@@ -63,3 +63,8 @@ def delete(todo_id):
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for("views.todolist"))
+@views.route("/paint")
+@login_required
+def paint():
+    return render_template("paint.html", user=current_user)
+

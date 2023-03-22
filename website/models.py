@@ -1,6 +1,8 @@
+import datetime 
 from . import db 
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,6 +21,9 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     complete = db.Column(db.Boolean)
+    date_created = db.Column(db.DateTime, default=datetime.datetime.utcnow())
+    due_date = db.Column(db.DateTime)
 
+ 
 
 

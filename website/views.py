@@ -2,11 +2,13 @@
 # Standard routes for the app , where users can actually go to
 
 # url deifned here , seperate app from blueprint
+import datetime
 from flask import Blueprint, render_template , flash , request , jsonify ,  redirect, url_for
 from flask_login import  login_required, current_user
 from .models import Note , Todo
 from . import db
 import json
+
 
 
 # Makes things more organised 
@@ -56,7 +58,12 @@ def todolist():
 @views.route("/add", methods=["POST"])
 def add():
     title = request.form.get("title")
-    new_todo = Todo(title=title, complete=False)
+    due_date_str = request.form.get("due_date")
+    if due_date_str:
+        due_date = datetime.datetime.strptime(due_date_str, "%Y-%m-%d")
+    else:
+        due_date = None
+    new_todo = Todo(title=title, complete=False, date_created=datetime.datetime.utcnow(), due_date=due_date)
     db.session.add(new_todo)
     db.session.commit()
     return redirect(url_for("views.todolist"))

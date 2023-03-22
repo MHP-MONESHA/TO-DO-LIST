@@ -14,13 +14,12 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
-
-
+    <link rel="stylesheet" href="/static/style.css" />
   <title>{% block title %}Home{% endblock %}</title> 
 
 </head>
 <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg">
       <button
         class="navbar-toggler"
         type="button"
@@ -33,7 +32,8 @@
         <div class="navbar-nav">
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
-          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+          <a class="nav-item nav-link" id="todolist" href="/todolist">To do list</a>
+          
           {% else %}
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
           <a class="nav-item nav-link" id="signUp" href="/Sign_up">Sign Up</a>
@@ -93,6 +93,10 @@
   });
   }
 </script>
+<footer id="footer">
+  <a id="logout" href="/logout">Logout</a>
+ </footer>
 {% endblock %}
+
 </body>
 </html>

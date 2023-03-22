@@ -1,13 +1,14 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
   %}
 
-  
+  <link rel="stylesheet" href="/static/style.css" />
+
   <h1 align="center">Notes</h1>
   <ul class="list-group list-group-flush" id="notes">
     {% for note in user.notes %}
     <li class="list-group-item">
       {{ note.data }}
-      <button type="button" class="close delete-note-btn" data-note-id="{{ note.id }}">
+      <button type="button" id="btn" class="close delete-note-btn" data-note-id="{{ note.id }}">
         <span aria-hidden="true">&times;</span>
       </button>
       <script>
@@ -26,7 +27,12 @@
     <textarea name="note" id="note" class="form-control"></textarea>
     <br />
     <div align="center">
-      <button type="submit" class="btn btn-primary">Add Note</button>
+      <button type="submit" id="btn" class="btn btn-primary">Add Note</button>
     </div>
   </form>
+  <footer id="footer">
+    
+      <a href="/logout">Logout</a>
+   
+  </footer>
   {% endblock %}

@@ -1,38 +1,87 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<link rel="stylesheet"  href='/static/style.css'/>
 
-  <link rel="stylesheet" href="/static/style.css" />
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+  <title>Home</title>
+</head>
 
-  <h1 align="center">Notes</h1>
-  <ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
-    <li class="list-group-item">
-      {{ note.data }}
-      <button type="button" id="btn" class="close delete-note-btn" data-note-id="{{ note.id }}">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <script>
-        const deleteNoteButtons = document.querySelectorAll('.delete-note-btn');
-        deleteNoteButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            const noteId = button.getAttribute('data-note-id');
-            deleteNote(noteId);
-          });
-        });
-      </script>
-    </li>
-    {% endfor %}
-  </ul>
-  <form method="POST">
-    <textarea name="note" id="note" class="form-control"></textarea>
-    <br />
-    <div align="center">
-      <button type="submit" id="btn" class="btn btn-primary">Add Note</button>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-black bg-black">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar">
+        <a class="navbar-brand" href="#">
+          <img src="https://img.freepik.com/premium-vector/list-icon-comic-style-document-checklist-cartoon-vector-illustration-white-isolated-background-notepad-check-mark-splash-effect-business-concept_157943-4976.jpg" alt="Logo" height="30">
+        </a>
+      <div class="navbar-nav">
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" id="home" href="/">HOME</a>
+        <a class="nav-item nav-link" id="todolist" href="/todolist">TO DO LIST</a>
+        <a class="nav-item nav-link" id="drawing" href="/paint">DRAWING APP</a>
+        <a class="nav-item nav-link" id="logout" href="/logout">LOGOUT</a>
+        {% else %}
+        <a class="nav-item nav-link" id="login" href="/login">LOGIN</a>
+        <a class="nav-item nav-link" id="signUp" href="/Sign_up">SIGN UP</a>
+        {% endif %}
+      </div>
     </div>
-  </form>
-  <footer id="footer">
-    
-      <a href="/logout">Logout</a>
-   
-  </footer>
-  {% endblock %}
+  </nav>
+  
+  <div id="content">
+    <div id="content-text">
+      <h2 id="home2">MAKING THINGS WORTHWILE!</h2>
+    </br>
+      <p id="home1">Project management software with task management features, essential for productivity and workflow. </p>
+     </br>   
+    <img id="home3" src="https://theanastasiaco.com/wp-content/uploads/2018/10/How-to-get-organized-at-home-checklist_stay-organized_getting-organized-ideas_get-organized-at-work_weekly-planner_to-do-list-notepad-sq2.jpg" alt="Image">
+    <button class="listdo"><a href="todolist"> Get Started</button></a>
+
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="footer-section">
+            <i class="fa fa-check"></i>
+            <h4>Prioritize & organize tasks with ease</h4>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="footer-section">
+            <i class="fa fa-check"></i>
+            <h4>Ease-to-use virtual whiteboard</h4>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="footer-section">
+            <i class="fa fa-check"></i>
+            <h4>Add details to every task</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+  
+</body>
+</html>

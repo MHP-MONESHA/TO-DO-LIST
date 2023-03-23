@@ -12,6 +12,12 @@
  <title> Drawing App </title>
  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+   <script src="/static/javascript.js"></script>    
+
+
 
      <link rel="stylesheet" href="/static/style.css">
      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">
@@ -36,10 +42,10 @@
         </slider>
        
          <!--canvas container-->
-    </br>
+    </br> 
+    <div id="borders1">
         <div id="container">
- <canvas id="paint" width="500px"
-height="400px" center="center"></canvas>
+ <canvas id="paint"></canvas>
  </div>
       
         
@@ -58,20 +64,14 @@ height="400px" center="center"></canvas>
     <button  id"reset" class="button" >Reset</button>
     </div>
 </div>
- <div id="copy">&copy Imaged used is from <a href="https://pixabay.com/photos/watercolor-background-design-795162/">Pixabay</a></div> 
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        
-   <script src="/static/javascript.js"></script>      
+<div>
  
-   <div>
-   <footer id="footer"> <a href="/logout"></a> 
-    Logout
-
-   </footer>
-   </div>
+        
+</div>
+</div>
+</div>
  </body>
 </html>
+
 
 {% endblock %}

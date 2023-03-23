@@ -103,7 +103,7 @@ h3, h1{
 
     background-color: #244c97;
     border-radius: 7px;
-    color: #444243;
+    color: white;
     font-size: 20px;
     border: whitesmoke 5px solid;
     font-family: 'Courier New', Courier, monospace;
@@ -133,6 +133,7 @@ h3, h1{
     height: 50px;
     left: 0;
     text-align: right;
+
 }
 
 #footer a{
@@ -181,7 +182,7 @@ background-color: skyblue;
     
 }
 #slider{
-    margin: 10px auto;
+    margin: 20px;
 }
 
 #circle{
@@ -214,14 +215,20 @@ background-color: skyblue;
 
 }
 #paint{
+display: flex;
+justify-content: center;
+ margin: 0px;
+ width: 500px; 
+ height: 400px;  
  background-color: #fff;
  cursor: crosshair;
+ border: none;
 }
 /*inputs container*/
 .inputContainer2{
  width: 399px;
  margin: 120px;
- position: center;
+display: inline;
 }
 /* erase, save and reset buttons */
 .input2{
@@ -380,4 +387,26 @@ margin: 10px;
 
     max-width: 100%;
     max-height: 70%;
+}
+
+#borders1{
+display: flex;
+justify-content: center;
+background-color: #1084e2;
+border: #b1cadf 40px solid;
+width: 600px;
+
+}
+
+
+
+tr{
+
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #244c97;
+
+
+
 }

@@ -175,6 +175,15 @@ background-color: skyblue;
 
 /* color input, line thickness, slider*/
 
+/*inputs containters*/
+.inputContainer{
+    width:  200px;
+    margin:  0 auto;
+       
+}
+
+/* color input, line thickness, slider*/
+
 .input{
   height: 30px;
   font-size: 1.3em;
@@ -182,7 +191,7 @@ background-color: skyblue;
     
 }
 #slider{
-    margin: 20px;
+    margin: 10px auto;
 }
 
 #circle{
@@ -190,7 +199,7 @@ background-color: skyblue;
     width: 3px;
     border-radius: 50%;
     background: black; 
-    margin-bottom: 50px;
+    margin: 0 auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -214,21 +223,18 @@ background-color: skyblue;
  margin: 10px auto;
 
 }
+
+
 #paint{
-display: flex;
-justify-content: center;
- margin: 0px;
- width: 500px; 
- height: 400px;  
+
  background-color: #fff;
  cursor: crosshair;
- border: none;
+
 }
 /*inputs container*/
 .inputContainer2{
  width: 399px;
- margin: 120px;
-display: inline;
+ margin: 0 auto;
 }
 /* erase, save and reset buttons */
 .input2{
@@ -237,6 +243,8 @@ color: #444243;
 font-size: 1.3em;
 float: left;
 } 
+
+
 
 .listdo{
 

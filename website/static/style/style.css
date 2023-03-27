@@ -1,7 +1,8 @@
 /* Set the background color of the navigation bar */
 .navbar {
   background-color: rgb(15, 15, 14);
-  height: 100px;
+  height: 70px;
+  border-top: 1px solid white;
 }
 
 /* Set the color of the links in the navigation bar */
@@ -13,17 +14,19 @@
 
 /* Set the font size of the links in the navigation bar */
 .navbar-nav .nav-link {
-  font-size: 25px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
   font-weight: bold;
   
 }
 
+
 /* Set the logo on the left */
 .navbar-brand img {
-  height: 60px;
+  height: 50px;
   margin-right: auto;
-  border-radius: 5px;
+  margin-left: 20px;
+  border-radius: 10rem;
 }
 
 /* Align the links to the right */
@@ -31,29 +34,15 @@
   margin-left: auto;
 }
 
-.navbar-nav .nav-link#logout {
-  background-color: yellow;
-  border-radius: 10px;
-  padding: 5px 10px;
-  color: black;
+#logout {
+  color: yellow;
+
 }
 
 .navbar-nav .nav-link#signUp {
-  background-color: yellow;
-  border-radius: 10px;
-  padding: 5px 10px;
-  color: black;
-
+  color: yellow;
 }
 
 .nav-item{
-  margin: 10px
-}
-
-button {
-  border-radius: 15px;
-  border: none;
-  padding: 10px 30px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-weight: bold;
+  margin: 15px
 }

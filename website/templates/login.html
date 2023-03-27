@@ -1,7 +1,11 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
   %}
 
-  <form method="POST">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+
+
+
+  <form method="POST" style="text-align:center;">
     <h3 align="center">Login</h3>
     <div class="form-group"> 
       <label for="email">Email Address</label>
@@ -26,4 +30,8 @@
     <br />
     <button type="submit" class="btn btn-primary">Login</button>
   </form>
+
+  
+
+
   {% endblock %}

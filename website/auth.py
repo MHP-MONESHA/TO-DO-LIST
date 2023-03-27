@@ -16,7 +16,6 @@ def login():
         user = User.query.filter_by(email=email).first() # look in the database for the user with that email / returns the first result 
         if user:
             if check_password_hash(user.password, password):
-                flash('Login Successful!' , category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
             else:

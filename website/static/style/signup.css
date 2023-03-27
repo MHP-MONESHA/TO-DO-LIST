@@ -1,0 +1,74 @@
+body {
+  background-color:yellow;
+  background-image: url('images/fer.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container {
+  margin-top:110px;
+  margin-left: 770px;
+}
+
+
+form {
+  max-width: 50%;
+  margin: auto;
+  background-color: rgb(231, 231, 5);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+form h3 {
+  font-family:Arial, Helvetica, sans-serif ;
+  margin-top: 0px;
+  text-align: center;
+  font-size: 28px;
+  color: rgb(15, 14, 14);
+}
+
+form label {
+  font-family:Arial, Helvetica, sans-serif ;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: rgb(14, 13, 13);
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(12, 11, 11) ;
+}
+
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color:rgb(183, 185, 185);
+  color: #050505;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #012530;
+}
+

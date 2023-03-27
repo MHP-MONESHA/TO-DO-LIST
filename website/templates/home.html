@@ -32,7 +32,9 @@
         {% if user.is_authenticated %}
         <a class="nav-item nav-link" id="home" href="/">HOME</a>
         <a class="nav-item nav-link" id="todolist" href="/todolist">TO DO LIST</a>
+        <a class="nav-item nav-link" id="planner" href="/logout">PLANNER</a>
         <a class="nav-item nav-link" id="logout" href="/logout">LOGOUT</a>
+        
         {% else %}
         <a class="nav-item nav-link" id="login" href="/login">LOGIN</a>
         <a class="nav-item nav-link" id="signUp" href="/Sign_up">SIGN UP</a>
@@ -72,11 +74,7 @@
         </div>
       </div>
     </div>
-  </div>
-  
-</body>
-
-  
+  </div> 
 </body>
 </html>
 
